@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="logo.jpg" type="image/jpeg">
+  <title>页面不存在 · 杏吧</title>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --red: #e8534a;
+      --red-dim: rgba(232,83,74,0.12);
+      --red-border: rgba(232,83,74,0.3);
+      --bg: #0a0a0a;
+      --surface: #111111;
+      --border: #222222;
+      --text: #f0f0f0;
+      --muted: #666;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    .wrap { max-width: 420px; width: 100%; text-align: center; }
+    .logo-img {
+      width: 72px; height: 72px;
+      border-radius: 16px;
+      object-fit: cover;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+    }
+    .code {
+      font-size: 5rem;
+      font-weight: 900;
+      color: var(--red);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+      letter-spacing: -2px;
+    }
+    .msg {
+      font-size: 1rem;
+      color: var(--muted);
+      margin-bottom: 2.5rem;
+    }
+    .btn {
+      display: inline-block;
+      background: var(--red-dim);
+      border: 1px solid var(--red-border);
+      color: var(--red);
+      text-decoration: none;
+      padding: 0.75rem 2rem;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: background .2s;
+    }
+    .btn:hover { background: rgba(232,83,74,0.2); }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <img class="logo-img" src="logo.jpg" alt="杏吧">
+  <div class="code">404</div>
+  <div class="msg">页面不存在，请返回首页获取最新地址</div>
+  <a class="btn" href="/">返回首页</a>
+</div>
+</body>
+</html>
