@@ -35,14 +35,17 @@
 
 收藏本页即可随时获取最新地址。
 
-### Telegram 频道
+### 商务合作
 
-- 商务合作：[t.me/xingba01](https://t.me/xingba01)
-- 投稿频道：[t.me/xingba02](https://t.me/xingba02)
+[t1t1.com](https://t1t1.com)
 
-### X（Twitter）
+### Telegram 投稿频道
 
-[@xingba](https://x.com/xingba)
+[t.me/xingba018](https://t.me/xingba018)
+
+### 邮箱
+
+xingba357@gmail.com
 
 ---
 
