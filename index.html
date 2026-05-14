@@ -5,109 +5,251 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="杏吧官方地址发布页，永久导航入口，提供最新可用地址，免翻墙线路持续更新。">
   <meta name="keywords" content="杏吧,杏吧最新地址,杏吧入口,杏吧官网,杏吧最新网址,杏吧吃瓜,杏吧论坛,杏吧社区,杏吧导航,xingba">
-  <title>杏吧 - 官方永久导航</title>
+  <title>杏吧 · 官方永久导航</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --red: #e8534a;
+      --red-dim: rgba(232,83,74,0.12);
+      --red-border: rgba(232,83,74,0.3);
+      --bg: #0a0a0a;
+      --surface: #111111;
+      --surface2: #181818;
+      --border: #222222;
+      --text: #f0f0f0;
+      --muted: #666;
+      --green: #4caf50;
+      --green-dim: rgba(76,175,80,0.12);
+      --green-border: rgba(76,175,80,0.3);
+      --blue: #2CA5E0;
+    }
+
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: #0f0f0f;
-      color: #f0f0f0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", sans-serif;
+      background: var(--bg);
+      color: var(--text);
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 2rem;
+      padding: 2rem 1.25rem;
     }
-    .container { max-width: 600px; width: 100%; text-align: center; }
-    .logo { font-size: 3rem; font-weight: 900; color: #e8534a; letter-spacing: 4px; margin-bottom: 0.5rem; }
-    .tagline { color: #888; font-size: 0.95rem; margin-bottom: 3rem; }
-    .section-title { font-size: 0.75rem; color: #666; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 1rem; }
-    .links { display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 3rem; }
-    .link-card {
+
+    .wrap { max-width: 560px; width: 100%; }
+
+    /* ── Header ── */
+    .header { text-align: center; margin-bottom: 2.5rem; }
+    .brand-badge {
+      display: inline-block;
+      background: var(--red-dim);
+      border: 1px solid var(--red-border);
+      color: var(--red);
+      font-size: 0.7rem;
+      letter-spacing: 3px;
+      padding: 4px 14px;
+      border-radius: 20px;
+      margin-bottom: 1.25rem;
+      text-transform: uppercase;
+    }
+    .logo {
+      font-size: 3.5rem;
+      font-weight: 900;
+      color: var(--text);
+      letter-spacing: 6px;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    .logo span { color: var(--red); }
+    .tagline {
+      color: var(--muted);
+      font-size: 0.875rem;
+      letter-spacing: 1px;
+    }
+
+    /* ── Badge row ── */
+    .badges {
+      display: flex;
+      gap: 0.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 1.25rem;
+    }
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.72rem;
+      padding: 4px 12px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      background: var(--surface);
+      text-decoration: none;
+      transition: color .2s, border-color .2s;
+    }
+    .badge-pill:hover { color: var(--text); border-color: #444; }
+    .badge-pill.tg:hover { color: var(--blue); border-color: var(--blue); }
+    .dot { width: 6px; height: 6px; border-radius: 50%; display: inline-block; }
+    .dot-red { background: var(--red); }
+    .dot-green { background: var(--green); }
+    .dot-blue { background: var(--blue); }
+
+    /* ── Divider ── */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2rem 0;
+    }
+
+    /* ── Section label ── */
+    .label {
+      font-size: 0.68rem;
+      letter-spacing: 3px;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin-bottom: 0.875rem;
+    }
+
+    /* ── Link cards ── */
+    .links { display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 2rem; }
+    .card {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background: #1a1a1a;
-      border: 1px solid #2a2a2a;
-      border-radius: 10px;
-      padding: 1rem 1.5rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1rem 1.25rem;
       text-decoration: none;
-      color: #f0f0f0;
-      transition: border-color 0.2s, background 0.2s;
+      color: var(--text);
+      transition: border-color .2s, background .2s, transform .15s;
     }
-    .link-card:hover { border-color: #e8534a; background: #1f1f1f; }
-    .link-left { text-align: left; }
-    .link-name { font-weight: 600; font-size: 1rem; }
-    .link-url { font-size: 0.8rem; color: #e8534a; margin-top: 2px; }
-    .badge {
-      font-size: 0.7rem;
+    .card:hover { transform: translateY(-1px); }
+    .card.primary:hover { border-color: var(--red-border); background: var(--surface2); }
+    .card.secondary:hover { border-color: var(--green-border); background: var(--surface2); }
+    .card-left { display: flex; align-items: center; gap: 0.875rem; }
+    .card-icon {
+      width: 38px; height: 38px;
+      border-radius: 9px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .icon-red { background: var(--red-dim); border: 1px solid var(--red-border); }
+    .icon-green { background: var(--green-dim); border: 1px solid var(--green-border); }
+    .card-name { font-weight: 600; font-size: 0.95rem; }
+    .card-url { font-size: 0.78rem; color: var(--muted); margin-top: 2px; }
+    .tag {
+      font-size: 0.68rem;
       padding: 3px 10px;
       border-radius: 20px;
       font-weight: 500;
+      white-space: nowrap;
     }
-    .badge-green { background: #1a3a1a; color: #4caf50; border: 1px solid #2d5a2d; }
-    .badge-yellow { background: #3a2a00; color: #ffc107; border: 1px solid #5a4000; }
-    .contact { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2rem; }
-    .contact-item {
+    .tag-red { background: var(--red-dim); color: var(--red); border: 1px solid var(--red-border); }
+    .tag-green { background: var(--green-dim); color: var(--green); border: 1px solid var(--green-border); }
+
+    /* ── Contact row ── */
+    .contact { display: flex; gap: 0.625rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
+    .contact-btn {
+      flex: 1;
+      min-width: 120px;
       display: flex;
       align-items: center;
-      gap: 0.5rem;
-      background: #1a1a1a;
-      border: 1px solid #2a2a2a;
-      border-radius: 8px;
-      padding: 0.6rem 1.2rem;
+      justify-content: center;
+      gap: 6px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.75rem 1rem;
       text-decoration: none;
-      color: #aaa;
-      font-size: 0.85rem;
-      transition: color 0.2s, border-color 0.2s;
+      color: var(--muted);
+      font-size: 0.82rem;
+      transition: color .2s, border-color .2s, background .2s;
     }
-    .contact-item:hover { color: #f0f0f0; border-color: #444; }
-    .footer { color: #444; font-size: 0.75rem; line-height: 1.8; }
-    .footer a { color: #666; text-decoration: none; }
-    .footer a:hover { color: #aaa; }
+    .contact-btn:hover { color: var(--text); border-color: #444; background: var(--surface2); }
+
+    /* ── Tip box ── */
+    .tip {
+      background: rgba(255,193,7,0.06);
+      border: 1px solid rgba(255,193,7,0.2);
+      border-radius: 10px;
+      padding: 0.875rem 1.125rem;
+      font-size: 0.8rem;
+      color: #999;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+    .tip-title { color: #ffc107; font-weight: 600; margin-bottom: 4px; font-size: 0.78rem; letter-spacing: 1px; }
+
+    /* ── Footer ── */
+    .footer { text-align: center; color: #3a3a3a; font-size: 0.72rem; line-height: 2; }
+    .footer a { color: #555; text-decoration: none; }
+    .footer a:hover { color: #888; }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="logo">杏吧</div>
-    <div class="tagline">全网热门内容聚合交流社区 · 收藏本页获取最新地址</div>
+<div class="wrap">
 
-    <div class="section-title">官方访问入口</div>
-    <div class="links">
-      <a class="link-card" href="https://xb388.tv" target="_blank" rel="noopener">
-        <div class="link-left">
-          <div class="link-name">永久官网</div>
-          <div class="link-url">xb388.tv</div>
+  <header class="header">
+    <div class="brand-badge">Official Navigation</div>
+    <div class="logo"><span>杏</span>吧</div>
+    <div class="tagline">全网热门内容聚合交流社区</div>
+    <div class="badges">
+      <span class="badge-pill"><span class="dot dot-red"></span>永久官网 xb388.tv</span>
+      <span class="badge-pill"><span class="dot dot-green"></span>免翻墙 1080xb.tv</span>
+      <a class="badge-pill tg" href="https://t.me/xingba018" target="_blank" rel="noopener"><span class="dot dot-blue"></span>Telegram 投稿</a>
+    </div>
+  </header>
+
+  <hr class="divider">
+
+  <div class="label">官方访问入口</div>
+  <div class="links">
+    <a class="card primary" href="https://xb388.tv" target="_blank" rel="noopener">
+      <div class="card-left">
+        <div class="card-icon icon-red">🔒</div>
+        <div>
+          <div class="card-name">永久官网</div>
+          <div class="card-url">xb388.tv</div>
         </div>
-        <span class="badge badge-yellow">需翻墙</span>
-      </a>
-      <a class="link-card" href="https://1080xb.tv" target="_blank" rel="noopener">
-        <div class="link-left">
-          <div class="link-name">备用线路</div>
-          <div class="link-url">1080xb.tv</div>
+      </div>
+      <span class="tag tag-red">需翻墙</span>
+    </a>
+    <a class="card secondary" href="https://1080xb.tv" target="_blank" rel="noopener">
+      <div class="card-left">
+        <div class="card-icon icon-green">✅</div>
+        <div>
+          <div class="card-name">备用线路</div>
+          <div class="card-url">1080xb.tv</div>
         </div>
-        <span class="badge badge-green">免翻墙</span>
-      </a>
-    </div>
-
-    <div class="section-title">联系我们</div>
-    <div class="contact">
-      <a class="contact-item" href="https://t.me/xingba018" target="_blank" rel="noopener">
-        Telegram 投稿频道
-      </a>
-      <a class="contact-item" href="https://t1t1.com" target="_blank" rel="noopener">
-        商务合作
-      </a>
-      <a class="contact-item" href="mailto:xingba357@gmail.com">
-        邮箱联系
-      </a>
-    </div>
-
-    <div class="footer">
-      收藏本页可随时获取最新地址<br>
-      <a href="https://github.com/xingba-official/xingba">GitHub 公告页</a> · xingba357@gmail.com
-    </div>
+      </div>
+      <span class="tag tag-green">免翻墙</span>
+    </a>
   </div>
+
+  <div class="tip">
+    <div class="tip-title">💡 TIP</div>
+    若以上地址均无法访问，请通过 Telegram 频道获取最新地址，或收藏本 GitHub 页面随时查看更新。
+  </div>
+
+  <div class="label">联系我们</div>
+  <div class="contact">
+    <a class="contact-btn" href="https://t.me/xingba018" target="_blank" rel="noopener">💬 Telegram 投稿频道</a>
+    <a class="contact-btn" href="https://t1t1.com" target="_blank" rel="noopener">🤝 商务合作</a>
+    <a class="contact-btn" href="mailto:xingba357@gmail.com">📧 邮箱联系</a>
+  </div>
+
+  <hr class="divider">
+
+  <footer class="footer">
+    收藏本页 · 随时获取最新地址<br>
+    <a href="https://github.com/xingba-official/xingba">GitHub 公告页</a> · xingba357@gmail.com<br>
+    <span>杏吧 · 杏吧最新地址 · 杏吧入口 · 杏吧论坛 · 杏吧导航</span>
+  </footer>
+
+</div>
 </body>
 </html>
