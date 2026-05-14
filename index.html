@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="杏吧官方地址发布页，永久导航入口，提供最新可用地址，免翻墙线路持续更新。">
   <meta name="keywords" content="杏吧,杏吧最新地址,杏吧入口,杏吧官网,杏吧最新网址,杏吧吃瓜,杏吧论坛,杏吧社区,杏吧导航,xingba">
+  <link rel="icon" href="logo.jpg" type="image/jpeg">
   <title>杏吧 · 官方永久导航</title>
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -53,15 +54,22 @@
       margin-bottom: 1.25rem;
       text-transform: uppercase;
     }
-    .logo {
-      font-size: 3.5rem;
+    .logo-img {
+      width: 96px;
+      height: 96px;
+      border-radius: 22px;
+      object-fit: cover;
+      margin-bottom: 1rem;
+      box-shadow: 0 0 0 1px rgba(255,255,255,0.06), 0 8px 32px rgba(0,0,0,0.5);
+    }
+    .site-name {
+      font-size: 2.2rem;
       font-weight: 900;
-      color: var(--text);
-      letter-spacing: 6px;
+      letter-spacing: 4px;
       line-height: 1;
       margin-bottom: 0.5rem;
     }
-    .logo span { color: var(--red); }
+    .site-name span { color: var(--red); }
     .tagline {
       color: var(--muted);
       font-size: 0.875rem;
@@ -97,11 +105,7 @@
     .dot-blue { background: var(--blue); }
 
     /* ── Divider ── */
-    .divider {
-      border: none;
-      border-top: 1px solid var(--border);
-      margin: 2rem 0;
-    }
+    .divider { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
 
     /* ── Section label ── */
     .label {
@@ -195,7 +199,8 @@
 
   <header class="header">
     <div class="brand-badge">Official Navigation</div>
-    <div class="logo"><span>杏</span>吧</div>
+    <img class="logo-img" src="logo.jpg" alt="杏吧">
+    <div class="site-name"><span>杏</span>吧</div>
     <div class="tagline">全网热门内容聚合交流社区</div>
     <div class="badges">
       <span class="badge-pill"><span class="dot dot-red"></span>永久官网 xb388.tv</span>
